@@ -11,6 +11,7 @@ public class TilemapCreator : MonoBehaviour {
     public TileBase tileToPlace;
     public TextMeshProUGUI text_dialog;
     private Tilemap tilemap;
+    public GameObject gridInfo;
 
     void Start() {
         tilemap = GetComponent<Tilemap>();
@@ -33,6 +34,12 @@ public class TilemapCreator : MonoBehaviour {
             for (int y = -4; y <= 3; y++) {
                 Vector3Int tilePosition = new Vector3Int(x, y, 0);
                 tilemap.SetTile(tilePosition, tileToPlace);
+                GameObject gridGameObject = Instantiate(gridInfo, tilemap.GetCellCenterWorld(tilePosition), Quaternion.identity);
+                BoxCollider2D boxCollider2D = gridGameObject.AddComponent<BoxCollider2D>();
+                boxCollider2D.isTrigger = true;
+                gridGameObject.name = "A(" + x + "," + y + ")";
+                GridInfo info = gridGameObject.GetComponent<GridInfo>();
+                info.name = "A" + x + "," + y;
             }
         }
     }
