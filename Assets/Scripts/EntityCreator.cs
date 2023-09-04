@@ -19,8 +19,8 @@ public class EntityCreator : MonoBehaviour {
     IEnumerator CheckInitialization() {
         yield return new WaitForSeconds(0.5f);
         this.entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        for (int x = -6; x <= 5; x++) {
-            for (int y = -8; y <= 6; y++) {
+        for (int x = -6; x <= 7; x++) {
+            for (int y = -10; y <= 12; y++) {
                 Vector3Int tilePosition = new Vector3Int(x, y, 0);
                 tilemap.SetTile(tilePosition, tileToPlace);
                 

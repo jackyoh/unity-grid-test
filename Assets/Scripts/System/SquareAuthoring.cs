@@ -16,22 +16,5 @@ public class SquareAuthoring : MonoBehaviour {
                 Debug.Log("(" + cellInfo.x + "," + cellInfo.y + ")");
             }
         }
-
-        /*EntityQuery query = entityManager.CreateEntityQuery(typeof(CellInfo));
-        query.SetSharedComponentFilter(new CellInfo { 
-            x = 1.0f,
-            y = 2.0f
-        });*/
-
-        /*query.SetSharedComponentFilter(new CellInfo { 
-            name = other.name
-        });
-        NativeArray<Entity> entities = query.ToEntityArray(Allocator.TempJob);
-        Debug.Log(entities.Length);*/
-        /*if (entities.Length > 0) {
-            CellInfo result = entityManager.GetSharedComponentManaged<CellInfo>(entities[0]);
-            Debug.Log("(" + result.x + "," + result.y + ")");
-
-        }*/
     }
 }
